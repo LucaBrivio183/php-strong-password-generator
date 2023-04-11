@@ -1,5 +1,7 @@
 <?php
-include __DIR__ . '/functions.php'
+include __DIR__ . '/functions.php';
+include __DIR__ . '/session.php';
+$_SESSION['password-length'] = $_GET['password-length'];
 ?>
 
 <!DOCTYPE html>
@@ -17,14 +19,13 @@ include __DIR__ . '/functions.php'
 <body class="vh-100 d-flex flex-column justify-content-center bg-primary-subtle">
     <div class="container ">
         <h1 class="p-3 text-center">Strong Password Generator</h1>
-        <form action="index.php" method="get" class="p-3 bg-light rounded">
+        <form action="show-pass.php" method="get" class="p-3 bg-light rounded">
             <div class="mb-3 row">
                 <label for="password-length" class="form-label col">Password length:</label>
                 <input type="number" class="form-control col" id="password-length" name="password-length" min="1">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <h2 class="p-3 text-center">Your password is: <?php echo randomPassword($_GET['password-length']) ?></h2>
     </div>
     <!-- bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
