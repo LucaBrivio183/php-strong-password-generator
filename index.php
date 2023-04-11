@@ -17,7 +17,7 @@ include __DIR__ . '/functions.php'
 <body class="vh-100 d-flex flex-column justify-content-center bg-primary-subtle">
     <div class="container ">
         <h1 class="p-3 text-center">Strong Password Generator</h1>
-        <form action="index.php" method="get" class="p-3 bg-light">
+        <form action="index.php" method="get" class="p-3 bg-light rounded">
             <div class="mb-3 row">
                 <label for="password-length" class="form-label col">Password length:</label>
                 <input type="number" class="form-control col" id="password-length" name="password-length" min="1">
