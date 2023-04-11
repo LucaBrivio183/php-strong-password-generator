@@ -1,12 +1,12 @@
 <?php
 function randomPassword($length)
 {
-    $character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
     $password = [];
-    $alphaLength = strlen($character) - 1;
+    $alphaLength = strlen($characters) - 1;
     for ($i = 0; $i < $length; $i++) {
         $n = rand(0, $alphaLength);
-        $password[] =  $character[$n];
+        $password[] =  $characters[$n];
     }
     return implode($password);
 }
