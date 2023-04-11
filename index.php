@@ -1,4 +1,15 @@
 <?php
+function randomPassword($length)
+{
+    $character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    $password = [];
+    $alphaLength = strlen($character) - 1;
+    for ($i = 0; $i < $length; $i++) {
+        $n = rand(0, $alphaLength);
+        $password[] =  $character[$n];
+    }
+    return implode($password);
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +33,8 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <h2>Your password is: <?php echo randomPassword($_GET['password-length'])
+                            ?></h2>
     <!-- bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
